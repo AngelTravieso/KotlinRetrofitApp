@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         val responseLiveData: LiveData<Response<Albums>> =
             liveData {
-                val response = retrofitService.getAlbums()
-                emit(response) // -> emit the response
+                //val response = retrofitService.getAlbums()
+
+                val response2 = retrofitService.getSpecificAlbums(6)
+                emit(response2) // -> emit the response
             }
 
         responseLiveData.observe(this, Observer {
